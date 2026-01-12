@@ -1,31 +1,40 @@
 import requests
-import json
 from dotenv import load_dotenv
 import pandas as pd
 import os
+from pydantic import BaseModel,RootModel, ValidationError
+from datetime import datetime
+import json
 
-load_dotenv()
-api_key = os.getenv('api_key')
+base_diretorio = os.path.dirname(os.path.abspath(__file__))
+caminho_json = os.path.join(base_diretorio, 'data', 'dados_cidades.json')
 
-cidade = 'Uberlândia'
-estado = 'Minas gerais'
+with open(caminho_json, 'r', encoding='utf-8') as f:
+    dados = json.load(f)
 
-validos = []
-invalidos = []
-df_cida
+class Cidades(BaseModel):
+    nome: str
+    estado: str
+    latitude: float
+    longitude: float
 
-for i, row in
-url_cidade = f'http://api.openweathermap.org/geo/1.0/direct?q={cidade},{estado},&appid={api_key}'
-response = requests.get(url_cidade)
-dados = response.json()[0]
-nome_cidade = dados.get('name')
-nome_estado = dados.get('state')
-latitue = dados.get('lat')
-longitude = dados.get('lon')
-validos.append({'nome': nome_cidade, 'estado': nome_estado, 'latitude': latitue, 'longitude': longitude})
-df = pd.DataFrame(validos)
-df.to_json(r'learning-airflow\include\data\uberlandia.json', orient='records', force_ascii=False)
+class ListaCidades(RootModel[list[Cidades]]):
+    pass
 
-url_dados = f'https://api.openweathermap.org/data/3.0/onecall?lat={latitue}&lon={longitude}&units=metric&appid={api_key}'
-response_1 = requests.get(url_dados)
-print(response_1.json())
+try:
+    cidades_validadas = ListaCidades.model_validate(dados)
+    print('Todos os dados validados.')
+except ValidationError as e:
+    print("Erros encontrados:", e)
+
+
+
+
+
+
+
+# load_dotenv()
+# api_key = os.getenv('api_key')
+# url_dados = f'https://api.openweathermap.org/data/3.0/onecall?lat={latitue}&lon={longitude}&units=metric&appid={api_key}'
+# response = requests.get(url_dados)
+# print(response.json())

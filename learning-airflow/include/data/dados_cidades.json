@@ -1,5 +1,11 @@
 [
   {
+    "nome":"Uberlândia",
+    "estado":"Minas Gerais",
+    "latitude":"joao",
+    "longitude":-48.2767837
+  },
+  {
     "nome":"Rio Branco",
     "estado":"Acre",
     "latitude":-9.9765362,
