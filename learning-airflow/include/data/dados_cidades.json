@@ -1,8 +1,14 @@
 [
   {
+    "nome":"Campina Verde",
+    "estado":"Minas Gerais",
+    "latitude":-19.535277,
+    "longitude":-49.486389
+  },
+  {
     "nome":"Uberlândia",
     "estado":"Minas Gerais",
-    "latitude":"joao",
+    "latitude":-18.9188041,
     "longitude":-48.2767837
   },
   {

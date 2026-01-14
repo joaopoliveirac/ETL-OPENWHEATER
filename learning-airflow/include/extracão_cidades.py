@@ -20,6 +20,9 @@ def extracao_dados_cidades(df_cidades: pd.DataFrame) -> list[dict]:
 
         try:
             response = requests.get(url_cidade)
+            json_response = response.json()
+            if not json_response:
+                continue
             dados = response.json()[0]
             nome_cidade = dados.get('name')
             nome_estado = dados.get('state')
@@ -36,7 +39,7 @@ def extracao_dados_cidades(df_cidades: pd.DataFrame) -> list[dict]:
 def main():
     df_cidades = pd.read_csv(caminho_entrada)
     dados = extracao_dados_cidades(df_cidades)
-    df_dados_cidades = pd.DataFrame(dados)
+    df_dados_cidades = (pd.DataFrame(dados).drop_duplicates(subset=['latitude', 'longitude']))
     df_dados_cidades.to_json(caminho_saida, orient='records', force_ascii=False, indent=2)
 
 if __name__ == "__main__":
