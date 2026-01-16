@@ -1,15 +1,14 @@
 import requests
-from datetime import datetime
 from dotenv import load_dotenv
-import os
 import pandas as pd
+import os
+from include.config.caminhos import include_dir, data_dir
 
 load_dotenv()
 api_key = os.getenv("api_key")
 
-base_diretorio = os.path.dirname(os.path.abspath(__file__))
-caminho_entrada = os.path.join(base_diretorio, "data", "capitais_brasil.csv")
-caminho_saida = os.path.join(base_diretorio, "data", "dados_cidades.json")
+caminho_entrada = data_dir / "capitais_brasil.csv"
+caminho_saida = data_dir / "cidades.json"
 
 def extracao_dados_cidades(df_cidades: pd.DataFrame) -> list[dict]:
     dados_geograficos_validos = []
