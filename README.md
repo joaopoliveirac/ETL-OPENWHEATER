@@ -2,8 +2,6 @@
 
 🌦️ Clima Brasil — Projeto de Engenharia de Dados
 
-[EN-US Documentation ↓]
-
 Status
 
 ✅ Concluído — Pipeline funcional, orquestrado e integrado a ferramenta de BI
@@ -21,70 +19,70 @@ O foco do projeto é demonstrar boas práticas de ETL, orquestração, modelagem
 
 O principal objetivo do projeto é:
 
-Construir um pipeline ETL completo e orquestrado
+- Construir um pipeline ETL completo e orquestrado
 
-Consumir dados reais de uma API externa (OpenWeather)
+- Consumir dados reais de uma API externa (OpenWeather)
 
-Aplicar validação de dados com regras de negócio
+- Aplicar validação de dados com regras de negócio
 
-Transformar dados em formato analítico
+- Transformar dados em formato analítico
 
-Armazenar em um Data Warehouse relacional
+- Armazenar em um Data Warehouse relacional
 
-Disponibilizar os dados para análises e dashboards
+- Disponibilizar os dados para análises e dashboards
 
-Utilizar Docker para padronização do ambiente
+- Utilizar Docker para padronização do ambiente
 
-Demonstrar domínio de ferramentas amplamente usadas em Engenharia de Dados
+- Demonstrar domínio de ferramentas amplamente usadas em Engenharia de Dados
 
 🧩 Principais Etapas da Pipeline
 1️⃣ Extração de Dados
 
-Leitura de um arquivo CSV contendo capitais brasileiras
+- Leitura de um arquivo CSV contendo capitais brasileiras
 
-Consumo da API de Geolocalização da OpenWeather
+- Consumo da API de Geolocalização da OpenWeather
 
-Consumo da API One Call (clima atual)
+- Consumo da API One Call (clima atual)
 
 2️⃣ Validação de Dados
 
 Uso do Pydantic para:
 
-Validar tipos
+- Validar tipos
 
-Validar intervalos (latitude, longitude, temperatura, umidade, pressão)
+- Validar intervalos (latitude, longitude, temperatura, umidade, pressão)
 
-Separação de registros válidos e inválidos
+- Separação de registros válidos e inválidos
 
-Persistência dos dados validados para rastreabilidade
+- Persistência dos dados validados para rastreabilidade
 
 3️⃣ Transformação
 
-Normalização de estruturas JSON
+- Normalização de estruturas JSON
 
-Criação de colunas derivadas:
+- Criação de colunas derivadas:
 
-Data, hora, ano, mês, dia
+- Data, hora, ano, mês, dia
 
-Indicadores booleanos (chuva, umidade alta, sensação térmica elevada)
+- Indicadores booleanos (chuva, umidade alta, sensação térmica elevada)
 
-Conversão para formato analítico (Parquet)
+- Conversão para formato analítico (Parquet)
 
 4️⃣ Carga de Dados
 
-Inserção no PostgreSQL utilizando SQLAlchemy
+- Inserção no PostgreSQL utilizando SQLAlchemy
 
-Modelagem em esquema estrela
+- Modelagem em esquema estrela
 
-UPSERT na dimensão de cidades
+- UPSERT na dimensão de cidades
 
-Controle de duplicidade na tabela fato
+- Controle de duplicidade na tabela fato
 
 5️⃣ Análise e Visualização
 
-Conexão direta do Power BI ao PostgreSQL
+- Conexão direta do Power BI ao PostgreSQL
 
-Criação de relatórios e dashboards analíticos
+- Criação de relatórios e dashboards analíticos
 
 🏗️ Arquitetura do Projeto
 ![Arquitetura](pics/arquitetura.png)
@@ -127,37 +125,37 @@ learning-airflow/
 🛠️ Tecnologias Utilizadas
 💻 Backend / Engenharia de Dados
 
-Python
+- Python
 
-Apache Airflow (orquestração)
+- Apache Airflow (orquestração)
 
-Pandas (transformações)
+- Pandas (transformações)
 
-Pydantic (validação de dados)
+- Pydantic (validação de dados)
 
-SQLAlchemy (integração com banco)
+- SQLAlchemy (integração com banco)
 
-PostgreSQL (Data Warehouse)
+- PostgreSQL (Data Warehouse)
 
-Docker & Docker Compose
+- Docker & Docker Compose
 
-OpenWeather API
+- OpenWeather API
 
 📊 Análise de Dados
 
-Power BI
+- Power BI
 
-Modelagem dimensional (Star Schema)
+- Modelagem dimensional (Star Schema)
 
 📊 Resultados
 
-Pipeline executando automaticamente
+- Pipeline executando automaticamente
 
-Dados atualizados de forma incremental
+- Dados atualizados de forma incremental
 
-Base confiável para análises climáticas
+- Base confiável para análises climáticas
 
-Projeto pronto para ser expandido (forecast, históricos, alertas, etc.)
+- Projeto pronto para ser expandido (forecast, históricos, alertas, etc.)
 
 🚀 Diferenciais do Projeto
 
