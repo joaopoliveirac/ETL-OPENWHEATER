@@ -89,6 +89,7 @@ Uso do Pydantic para:
 
 📁 Estrutura do Projeto
 
+```
 learning-airflow/
 │
 ├── dags/
@@ -121,6 +122,7 @@ learning-airflow/
 ├── docker-compose.yml
 ├── .env
 └── README.md
+```
 
 🛠️ Tecnologias Utilizadas
 💻 Backend / Engenharia de Dados
