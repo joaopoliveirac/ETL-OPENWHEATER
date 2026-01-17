@@ -114,10 +114,7 @@ learning-airflow/
 │   │   └── caminhos.py
 │   │
 │   └── data/
-│       ├── capitais_brasil.csv
-│       ├── cidades_validas.json
-│       ├── clima_atual_validado.json
-│       └── clima_transformado.parquet
+│       └── capitais_brasil.csv
 │
 ├── docker-compose.yml
 ├── .env
