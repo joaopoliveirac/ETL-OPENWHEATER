@@ -158,10 +158,10 @@ learning-airflow/
 
 🚀 Diferenciais do Projeto
 
-✅ Pipeline real com API externa
-✅ Orquestração com Airflow
-✅ Validação robusta com Pydantic
-✅ Modelagem analítica
-✅ Integração com BI
-✅ Ambiente Dockerizado
-✅ Código modular e escalável
+- Pipeline real com API externa
+- Orquestração com Airflow
+- Validação robusta com Pydantic
+- Modelagem analítica
+- Integração com BI
+- Ambiente Dockerizado
+- Código modular e escalável
