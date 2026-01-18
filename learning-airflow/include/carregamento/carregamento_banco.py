@@ -9,7 +9,7 @@ def carregar_dados(df_transformado):
         return "Carga não realizada - DataFrame vazio"
 
     with engine.begin() as conn:
-        for _, row in df_transformado.iterrows():
+        for i, row in df_transformado.iterrows():
             cidade_sql = text("""
                 INSERT INTO dim_cidade (nome, estado, latitude, longitude)
                 VALUES (:nome, :estado, :latitude, :longitude)
@@ -47,5 +47,4 @@ def carregar_dados(df_transformado):
                 {**row, "cidade_id": cidade_id}
             )
 
-    print("Carga concluída com sucesso!")
     return "Carga concluída"
